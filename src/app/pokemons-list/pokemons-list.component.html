@@ -1,0 +1,23 @@
+<div class="mainbox">
+    <div class="row">
+        <div class="d-flex m-4">
+            <button mat-raised-button color="primary"  routerLink="/Home">Pokemons</button>
+            <button mat-raised-button color="primary"  routerLink="/Items">Items</button>
+        </div>
+        <div class="d-flex flex-row-reverse mt-4">
+            <form>
+                <mat-form-field appareance="fill" class="mx-2">
+                    <mat-label>Find Pokemons</mat-label>
+                    <input #findPokemon type="text" matInput placeholder="Pikachu" (keyup)="filterPokemons(findPokemon.value)">
+                    <mat-icon matSuffix>Search</mat-icon>
+                </mat-form-field>
+            </form>
+        </div>
+    </div>
+    <div class="row py-4 px-5">
+        <div class="col-4 mb-2" *ngFor="let pokemon of pokemonsFiltered">
+            <app-poke-card [pokemon]="pokemon.name"></app-poke-card>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,12 @@
+<mat-card class="card">
+    <mat-card-header>
+        <h2 *ngIf="load" class="header-name">{{pokemonDetails.name | upperCase}}</h2>
+    </mat-card-header>
+    <img *ngIf="load" mat-card-image [src]="pokemonDetails.sprites.front_default" alt="{{pokemonDetails.name}} picture">
+    <mat-card-content *ngIf="load">
+        {{pokemonDetails.name}}
+    </mat-card-content>
+    <mat-card-actions>
+        <button *ngIf="load" mat-raised-button color="primary"  routerLink="/Pokemon/{{pokemonDetails.name}}">View More</button>
+    </mat-card-actions>
+</mat-card>

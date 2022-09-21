@@ -1,0 +1,15 @@
+.mainbox {
+    background-color: #95c2de;
+  }
+
+.card{
+    max-width: 300px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.header-name{
+    text-align: center;
+    justify-content: center;
+    display: flex;
+}

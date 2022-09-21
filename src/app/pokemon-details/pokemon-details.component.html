@@ -1,0 +1,37 @@
+<div class="mainbox">
+    <mat-card class="card">
+        <mat-card-header>
+            <h2 *ngIf="load" class="header-name">{{details.name | upperCase}}</h2>
+        </mat-card-header>
+        <img *ngIf="load" mat-card-image [src]="details.sprites.front_default" alt="{{details.name}} picture" >
+        <mat-card-content >
+            <p *ngIf="load">Id: {{details.id}}</p>
+            <p *ngIf="load">Height: {{details.height}}</p>
+            <p *ngIf="load">Weight: {{details.weight}}</p>
+            <p *ngIf="load">Base Experience: {{details.base_experience}}</p>
+            <p *ngIf="load">Species: {{details.species.name}}</p>
+            <p *ngIf="load">Shiny: {{details.sprites.front_shiny | shiny}}</p>
+            <p *ngIf="load">Female: {{details.sprites.front_female | shiny}}</p>
+        </mat-card-content>
+        <mat-card-actions>
+        </mat-card-actions>
+    </mat-card>
+    <div *ngIf="load">
+        <mat-card *ngIf="details.sprites.front_shiny" class="card">
+            <mat-card-content>
+                <h2>Shiny</h2>
+                <img *ngIf="load" mat-card-image [src]="details.sprites.front_shiny" alt="{{details.name}} picture" >
+            </mat-card-content>
+        </mat-card>
+    </div>
+    <div *ngIf="load">
+        <mat-card *ngIf="details.sprites.front_female" class="card">
+            <mat-card-content>
+                <h2>female</h2>
+                <img *ngIf="load" mat-card-image [src]="details.sprites.front_female" alt="{{details.name}} picture" >
+            </mat-card-content>
+        </mat-card>
+    </div>
+    
+    
+</div>
